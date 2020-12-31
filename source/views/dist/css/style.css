@@ -1,0 +1,62 @@
+input[id=tituloPerguntaInputHTML] {
+    border: none; width: 100%;
+    border-bottom: 1px solid #218da2;
+    padding: 5px;     
+}
+input[id=tituloPerguntaInputHTML]:focus {      
+     border: none;
+     border-style: none;
+}
+
+input[id=tituloPerguntaSelectHTML] {
+    border: none; width: 100%;
+    border-bottom: 1px solid #218da2;
+    padding: 5px;   
+}
+
+input[id=tituloPerguntaCheckBox] {
+
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #218da2;
+    padding: 5px;
+
+}
+
+
+
+input[id=tituloPerguntaSelectHTML]:focus {      
+     border: none;
+     border-style: none;
+}
+
+input[id=tituloPerguntaCheckBox] {
+
+    border: none;
+    border-bottom: 1px solid #218da2;
+
+}
+
+.caixas-ocultas-forms-itens {
+    display: none;
+}
+
+.cx-questoes-geral {
+    padding: 5px 10px 5px 10px; 
+    font-size: 13px
+}
+
+.cx-questoes {
+    width: 13rem; 
+    z-index: 1; 
+    margin: 2px;
+}
+
+.painel-card:hover{
+    
+    background-color: #32a2b8;
+    color: #fff
+    
+}
+
+
