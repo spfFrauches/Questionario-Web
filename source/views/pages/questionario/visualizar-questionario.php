@@ -9,21 +9,19 @@
     </nav>
     <br/>
     <h1 class="h2">Visualizando questionários</h1>
-    <hr/>
+    <br/>
     
     <div class="card m-1 p-3">
         <br/>
         <?php foreach ($listQuestionario as $key => $value): ?>   
-        <h2> <?= $value->NomQst ?> </h2>
+        <h2 class="text-center"> <?= $value->NomQst ?> </h2>
         <?php endforeach; ?>
-        <hr/>
+        <br/>
         
-        <div class="row">
-            
-            <div class="col-8">
-            
+        <div class="row ">   
+            <div class="col-2" ></div>
+            <div class="col-8 card p-3">
                 <form method="post" action="<?= URL_BASE ?>/questionario/resposta">
-                    
                     <?php foreach ($listPerguntas as $key => $value): ?>   
 
                         <?php if ($value->PegTip == 'inputHTML'): ?>
@@ -38,7 +36,7 @@
                         <?php endif; ?>
 
                         <?php if ($value->PegTip == 'selectHTML'): ?>
-                            <div class="form-group">
+                            <div class="form-group ">
                                 <label><?= $value->PegQst ?></label>
                                 <input type="hidden" name="pergunta[]" value="<?= $value->PegQst ?>">
                                 <input type="hidden" name="Codpergunta[]" value="<?= $value->CodPeg ?>">
@@ -53,19 +51,14 @@
                             </div>
                             <br/>
                         <?php endif; ?>
-
                     <?php endforeach; ?>
-                            
                     <button type="submit" class="btn btn-secondary btn-lg btn-block">Enviar resposta</button>
-                    
                 </form>
-                
-               
-
+                <br/>
             </div>
-            
+            <div class="col-2" ></div>       
         </div>
-                
+        <br/><br/>
     </div>
    
 </div>

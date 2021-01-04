@@ -316,13 +316,30 @@ class DataBase {
                
     }
     
-     public function listarEnvioRespostas($codqst){
+    public function listarEnvioRespostas($codqst) {
         
         $tabela = "A004ENVRES";                   
         $pdo = Conexao::getConn();
         
         $sql = "SELECT * FROM  $tabela WHERE CodQst = '$codqst' ";
 
+        $sql = $pdo->prepare($sql);
+        $sql->execute(); 
+     
+        $resultado = [];
+        
+        while ($row = $sql->fetchObject()) { $resultado[] = $row; }   
+        return $resultado;  
+               
+    }
+    
+    public function listarRespostasQuestionario($codEnvRes) {
+        
+        $tabela = "A004RES";                   
+        $pdo = Conexao::getConn();
+        
+        $sql = "SELECT * FROM  $tabela WHERE Codenv = '$codEnvRes' ";
+         
         $sql = $pdo->prepare($sql);
         $sql->execute(); 
      

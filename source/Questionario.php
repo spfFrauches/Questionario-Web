@@ -36,8 +36,7 @@ class Questionario {
     
     public function excluir($data) 
     {
-        if (isset($data['cod'])) { 
-                  
+        if (isset($data['cod'])) {                   
             $bancoQst = new DataBase(); 
             $delete = $bancoQst->deleteAllQuestionario($data['cod']);
             $listarQst = $bancoQst->listTableA001Qst();
@@ -128,12 +127,18 @@ class Questionario {
         $envio = $bancoQst->envioResposta($idEnvio, $dataenv, $codqst);
         
         if ($envio) {
+            
             foreach ($_POST['pergunta'] as $pergunta => $value) {
                 $codpeg = $_POST['Codpergunta'][$pergunta];
                 $despeg = $value;
                 $resposta = $_POST['resposta'][$pergunta];
                 $bancoQst->insertResposta($idEnvio , $codqst, $codpeg, $despeg, $resposta);
-            }
+            } 
+            
+            require './source/views/basicHTMLHeader.php';          
+            require './source/views/pages/questionario/visualizar-questionario-finalizar.php';
+            require './source/views/basicHTMLFooter.php';  
+            
         }
                     
     }
