@@ -46,6 +46,19 @@ class Questionario {
         }
     }
     
+    public function excluirRespostas($data) 
+    {
+        if (isset($data['codenv'])) {                   
+            $bancoQst = new DataBase(); 
+            $delete = $bancoQst->deleteRespostas($data['codenv']);
+            $listarEnvioRespostas = $bancoQst->listarEnvioRespostas($data['codqst']);
+            $dadosQst = $bancoQst->listQst($data['codqst']);            
+            require './source/views/basicHTMLHeader.php';   
+            require './source/views/pages/questionario/visualizar-resposta.php';
+            require './source/views/basicHTMLFooter.php';  
+        }
+    }
+    
     
     public function visualizar($data) 
     {  

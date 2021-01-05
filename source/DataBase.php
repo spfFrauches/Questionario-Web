@@ -174,18 +174,45 @@ class DataBase {
         $tabela1 = "A001QST";      
         $tabela2 = "A002PEG"; 
         $tabela3 = "A003PEG";   
-        
+        $tabela4 = "A004ENVRES";
+        $tabela5 = "A004RES";
+               
         $pdo = Conexao::getConn();
         
         $sql1 = "delete FROM  $tabela1 where CodQst = $codQst";
         $sql2 = "delete FROM  $tabela2 where CodQst = $codQst";
         $sql3 = "delete FROM  $tabela3 where CodQst = $codQst";
+        $sql4 = "delete FROM  $tabela4 where CodQst = $codQst";
+        $sql5 = "delete FROM  $tabela5 where CodQst = $codQst";
         
         $sql1 = $pdo->prepare($sql1);
         $sql2 = $pdo->prepare($sql2);
         $sql3 = $pdo->prepare($sql3);
+        $sql4 = $pdo->prepare($sql4);
+        $sql5 = $pdo->prepare($sql5);
         
-        if ($sql1->execute() && $sql2->execute() && $sql3->execute()) {
+        if ($sql1->execute() && $sql2->execute() && $sql3->execute() && $sql4->execute() && $sql5->execute()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+               
+    }
+    
+    public function deleteRespostas($codenv) {
+        
+        $tabela1 = "A004ENVRES"; 
+        $tabela2 = "A004RES"; 
+        $pdo = Conexao::getConn();
+        
+        $sql1 = "delete FROM  $tabela1 where CodEnv = $codenv";
+        $sql2 = "delete FROM  $tabela2 where CodEnv = $codenv";
+        
+        $sql1 = $pdo->prepare($sql1);
+        $sql2 = $pdo->prepare($sql2);
+
+        if ($sql1->execute() && $sql2->execute()) {
             return true;
         }
         else {
