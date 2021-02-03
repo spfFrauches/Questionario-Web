@@ -5,10 +5,10 @@ Por: Saulo Frauches
 
 Detalhes descritivos: 
 O usuário comum pode criar seu questionado apenas cliando e 
-arrastando para criar suas perguntas.
+arrastando para montar suas perguntas.
 
 As perguntas ficam disponiveis no site onde qualquer pessoa
-pode responder
+pode responder.
 
 As respostas podem ser visualizadas.
 
