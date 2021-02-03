@@ -1,5 +1,7 @@
 <?php
 
+/* Camada Model da Aplicação */
+
 namespace Source;
 
 use Source\Conexao;

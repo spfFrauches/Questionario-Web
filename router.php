@@ -16,6 +16,7 @@ $router->namespace("Source");
 $router->group(null);
 $router->get("/", "WebApp:home");
 $router->get("/sair", "WebApp:sair");
+$router->get("/sobre", "WebApp:sobre");
 
 /* /questionario/ do site */
 $router->group("questionario");
@@ -29,9 +30,9 @@ $router->post("/excluir/{cod}", "Questionario:excluir");
 $router->post("/resposta", "Questionario:resposta");
 $router->post("/listar-respostas/{cod}", "Questionario:listarRespostas");
 $router->get("/listar-respostas/{cod}", "Questionario:listarRespostas");
-
 $router->get ("/respostas/excluir/{cod}", "Questionario:excluirRespostas");
 $router->post("/respostas/excluir/{cod}", "Questionario:excluirRespostas");
+
 
 /* executar rota */
 $router->dispatch();

@@ -1,5 +1,7 @@
 <?php
 
+/* Controller da Aplicação */
+
 namespace Source;
 
 class WebApp {
@@ -17,6 +19,14 @@ class WebApp {
         session_destroy();
         $url = URL_BASE;
         header("Location: $url");
+    }
+    
+    public function sobre() 
+    {
+        require './source/views/basicHTMLHeader.php'; 
+        require './source/views/pages/sobre.php';
+        require './source/views/basicHTMLFooter.php';   
+        
     }
        
     

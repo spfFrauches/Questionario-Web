@@ -1,5 +1,7 @@
 <?php
 
+/* driver do banco de dados */
+
 namespace Source;
 use PDO;
 

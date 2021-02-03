@@ -12,9 +12,9 @@
             <div class="btn-group mr-2">   
                 <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-cogs" aria-hidden="true"></i></button>
             </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary">
+            <a  href="./sobre"type="button" class="btn btn-sm btn-outline-secondary">
                 Sobre 
-            </button>
+            </a>
         </div>
     </div>
      
